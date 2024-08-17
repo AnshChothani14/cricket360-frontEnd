@@ -1,0 +1,121 @@
+.score,
+.balling,
+.batting{
+    background: white ;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5)
+}
+.scoreCard{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: #22333B;
+    color: #F2F4F3;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5)
+}
+.btMan{
+    width: 40%;
+}
+.batsman-1 ,
+.batsman-2{
+    width: 49%;
+    display: flex;
+    justify-content: space-between;
+}
+.batsman-2{
+    margin-top: 5px;
+}
+.RWO{
+    text-align: center;
+    width: 20%;
+}
+.ball{
+    width: 40%;
+    text-align: end;
+}
+.overScore{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    float: right;
+    margin-top: 5px;
+}
+.O{
+    margin-top: 5px;
+}
+
+h5{
+    color: #F2F4F3;
+}
+.ball-1,
+.ball-2,
+.ball-3,
+.ball-4,
+.ball-5,
+.ball-6{
+    background: #F2F4F3;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+.ball-1 h5 ,
+.ball-2 h5 ,
+.ball-3 h5 ,
+.ball-4 h5 ,
+.ball-5 h5 ,
+.ball-6 h5 {
+    color: #22333B;
+}
+.updateOptions{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.FU{
+    background: #22333B;
+    color: aliceblue;
+    margin-left: 45%;
+    margin-top: 50px;
+}
+.FU:hover{
+    background: #F2F4F3;
+    color: #22333B;
+}
+.FU:focus{
+    outline: none;
+}
+.updateBatInfo{
+    /* background: #000; */
+    display: flex;
+    justify-content: space-between;
+}
+.sec-for-bat-1,
+.sec-for-bat-2{
+    display: flex;
+    justify-content: space-between;
+    /* background: #22333baf; */
+    width: 49%;
+    padding: 15px;
+    align-items: center;
+    border-radius: 20px;
+    border: 3px dashed black;
+}
+.out{
+    padding: 5px 20px 5px 20px;
+    height: fit-content;
+}
+.active{
+    background: rgba(0, 128, 0, 0.705);
+}
+.batsman-info h5 {
+    color: #22333B;
+}
+.balling{
+    
+}

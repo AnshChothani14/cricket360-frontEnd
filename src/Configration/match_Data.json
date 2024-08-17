@@ -1,0 +1,107 @@
+[
+    {
+        "match_id": "1f5e13fa-06c8-4f2b-a0ff-39c2b0c74817",
+        "live": false,
+        "team1": "Sunrisers Hyderabad",
+        "team2": "Mumbai Indians",
+        "winner": "Mumbai Indians"
+    },
+    {
+        "match_id": "6c2d6b80-b10e-4d9e-9c6e-91e8be2de8cf",
+        "live": true,
+        "team1": "Delhi Capitals",
+        "team2": "Punjab Kings",
+        "winner": "Punjab Kings"
+    },
+    {
+        "match_id": "cf41e9b7-7a59-42e4-86cf-6e8e2de1e6ab",
+        "live": false,
+        "team1": "Royal Challengers Bangalore",
+        "team2": "Rajasthan Royals",
+        "winner": "Rajasthan Royals"
+    },
+    {
+        "match_id": "63f91b4e-32bb-4d59-9ef0-396b93799863",
+        "live": true,
+        "team1": "Gujarat Titans",
+        "team2": "Kolkata Knight Riders",
+        "winner": "Gujarat Titans"
+    },
+    {
+        "match_id": "c7d743d8-7284-49a0-bfc5-49c2b6f77eaf",
+        "live": false,
+        "team1": "Lucknow Super Giants",
+        "team2": "Sunrisers Hyderabad",
+        "winner": "Lucknow Super Giants"
+    },
+    {
+        "match_id": "fdc3d749-0f9e-4183-965d-f53f5a9e94b1",
+        "live": true,
+        "team1": "Chennai Super Kings",
+        "team2": "Mumbai Indians",
+        "winner": "Chennai Super Kings"
+    },
+    {
+        "match_id": "3cbdca14-6f43-4d90-a9ef-3d6b0e2b69c4",
+        "live": false,
+        "team1": "Delhi Capitals",
+        "team2": "Gujarat Titans",
+        "winner": "Gujarat Titans"
+    },
+    {
+        "match_id": "ad59a2d1-5a9a-4f6c-bb7c-3ed928afbcf6",
+        "live": true,
+        "team1": "Kolkata Knight Riders",
+        "team2": "Royal Challengers Bangalore",
+        "winner": "Kolkata Knight Riders"
+    },
+    {
+        "match_id": "dfbdc59b-64c3-4c57-a9e3-66beedaaac0f",
+        "live": false,
+        "team1": "Punjab Kings",
+        "team2": "Rajasthan Royals",
+        "winner": "Punjab Kings"
+    },
+    {
+        "match_id": "451deda7-7c78-42cb-9eaf-b2eb5e3f4c4a",
+        "live": true,
+        "team1": "Mumbai Indians",
+        "team2": "Delhi Capitals",
+        "winner": "Mumbai Indians"
+    },
+    {
+        "match_id": "334b619a-d9a6-4189-9b2d-6ec2e6b6c66a",
+        "live": false,
+        "team1": "Sunrisers Hyderabad",
+        "team2": "Chennai Super Kings",
+        "winner": "Chennai Super Kings"
+    },
+    {
+        "match_id": "a5677b58-c823-4c6c-99b7-d517a841ef45",
+        "live": true,
+        "team1": "Gujarat Titans",
+        "team2": "Lucknow Super Giants",
+        "winner": "Gujarat Titans"
+    },
+    {
+        "match_id": "8a306d87-bb36-41d3-9455-1a4dfe2fb6c1",
+        "live": false,
+        "team1": "Royal Challengers Bangalore",
+        "team2": "Mumbai Indians",
+        "winner": "Mumbai Indians"
+    },
+    {
+        "match_id": "6e3920c9-3040-4ab7-b1d1-30f8771ff95f",
+        "live": true,
+        "team1": "Rajasthan Royals",
+        "team2": "Punjab Kings",
+        "winner": "Rajasthan Royals"
+    },
+    {
+        "match_id": "e0574e3b-d3ef-4fd4-9d2c-23e0e8a3e4c6",
+        "live": false,
+        "team1": "Chennai Super Kings",
+        "team2": "Delhi Capitals",
+        "winner": "Chennai Super Kings"
+    }
+]

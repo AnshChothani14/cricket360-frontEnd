@@ -1,0 +1,38 @@
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen-video {
+    margin: auto;
+    margin-right: 40px;
+    width: 100vw;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.hide {
+    opacity: 0;
+    pointer-events: none;
+    width: 0vw;
+    height: 0vh;
+}
+
+.fadeOut {
+    opacity: 0;
+}
+
+@media (max-width: 428px){
+    .fullscreen-video {
+        object-fit: contain;
+    }
+
+}

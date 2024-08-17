@@ -1,0 +1,110 @@
+.heroSecMS {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 50px;
+    border: 3px solid #a9927d;
+    margin-top: 60px;
+}
+
+.team1 {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    /* margin-top: 25px; */
+}
+
+.TeamName {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    /* align-items: center; */
+}
+.temArea{
+    display: flex;
+    /* align-items: center;  */
+    justify-content: center;
+}
+.playerInput{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.playerNameIP{
+    width: 50%;
+}
+.playersSection{
+    background: white;
+    border: 3px solid #a9927d;
+    border-radius: 10px;
+    margin-top: 60px;
+}
+.addPlayer,
+.teamname{
+    padding: 20px;
+}
+.playerButtonContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.playerCard{
+    width: 100%;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.t1 , 
+.t2{
+    width: 45%;
+}
+.T{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.btnTN{
+    margin: 3% 0 0 45%;
+}
+.MT{
+    width: 30%;
+    justify-content: space-between;
+    /* background: #000; */
+    align-items: center;
+}
+.subO{
+    width: 45%;
+}
+.o1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.other{
+    padding: 20px;
+    background: white;
+    border: 3px solid #a9927d;
+    border-radius: 10px;
+}
+.otherInput{
+    margin-top: 35px;
+}
