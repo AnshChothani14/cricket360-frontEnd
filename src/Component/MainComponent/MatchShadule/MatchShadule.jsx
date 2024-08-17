@@ -1,15 +1,22 @@
-import React, { useState, useEffect } from 'react';
+ import React, { useState, useEffect } from 'react';
 import { Divider, Button, TextField, IconButton } from '@mui/material';
 import { Delete, Edit } from '@mui/icons-material';
 import Dropdown from '../../DesignComponent/Dropdown/DropDown';
 import './MatchShadule.css';
-import { useDispatch } from 'react-redux';
-import { addMatch } from '../../Redux/matchslice';
 import { io } from "socket.io-client";
+import CustomModal from '../../DesignComponent/Modal/Modal'
+import { Typography } from '@mui/material';
+import LoginButton from '../LoginLogout/login';
+import { useAuth0 } from "@auth0/auth0-react";
 
-const socket = io("http://10.1.5.4:4000");
+const socket = io("https://10.1.5.143:4000",{
+    transports: ["websocket", "polling"],
+    timeout: 10000,
+}
+);
 
 const MatchShadule = () => {
+    const { user, isAuthenticated } = useAuth0();
     const [team1Players, setTeam1Players] = useState([]);
     const [team2Players, setTeam2Players] = useState([]);
     const [newPlayer, setNewPlayer] = useState({ name: '', role: '', team: '' });
@@ -23,6 +30,16 @@ const MatchShadule = () => {
     const [matchType, setMatchType] = useState('');
     const [venue, setVenue] = useState('');
     const [date, setDate] = useState('');
+    const [matchId, setMatchId] = useState();
+    // const [adminID, setAdminId] = useState();
+    const [adminPassword, setAdminPassword] = useState()
+    const [open, setOpen] = useState(false);
+    const[socketId, setSocketId] = useState("ja ja  khadeda")
+    const [denger , setDenger] = useState(isAuthenticated)
+
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+    
 
     const playerRoles = [
         { text: 'Captain', href: '-' },
@@ -39,14 +56,19 @@ const MatchShadule = () => {
         { text: 'Test', href: '-' }
     ];
 
-    const dispatch = useDispatch();
     const [matchData, setMatchData] = useState({});
 
     useEffect(() => {
         socket.on("matchData", (data) => {
+            setSocketId(socket.id)
+            console.log(socketId)
             setMatchData(data);
             console.log(matchData)
         });
+        socket.on("connect_error", (error) => {
+            console.error("Socket connection error:", error);
+        });
+        
 
         return () => {
             socket.off("matchData");
@@ -122,6 +144,14 @@ const MatchShadule = () => {
     const handleRoleSelect = (role) => {
         setNewPlayer({ ...newPlayer, role });
     };
+    const generateRandomId = () => {
+        const id = Math.random().toString(36).substring(2, 15);
+        setMatchId(id);
+    };
+    const handleMIAlert = () => {
+        alert('Match Id Is Allready Genrated');
+    }
+
 
     const handleTeamNameChange = (team, value) => {
         if (team === 'team1') {
@@ -141,24 +171,26 @@ const MatchShadule = () => {
     };
 
     const handleAddMatch = () => {
-        if (!team1Name || !team2Name || !matchType || !venue || !date) {
+        const adminID = user.email
+        if (!team1Name || !team2Name || !matchType || !venue || !date || !matchId) {
             alert('Please fill in all fields');
             return;
         }
 
-        if (team1Players.length !== 12 || team2Players.length !== 12) {
-            alert('Each team must have exactly 12 players');
-            return;
-        }
+        // if (team1Players.length !== 12 || team2Players.length !== 12) {
+        //     alert('Each team must have exactly 12 players');
+        //     return;
+        // }
 
         const team1Roles = team1Players.map(player => player.role);
         const team2Roles = team2Players.map(player => player.role);
 
-        if (!team1Roles.includes('Captain') || !team2Roles.includes('Captain') ||
-            !team1Roles.includes('Vice Captain') || !team2Roles.includes('Vice Captain')) {
-            alert('Each team must have a Captain and a Vice Captain');
-            return;
-        }
+        // if (!team1Roles.includes('Captain') || !team2Roles.includes('Captain') ||
+        //     !team1Roles.includes('Vice Captain') || !team2Roles.includes('Vice Captain')) {
+        //     alert('Each team must have a Captain and a Vice Captain');
+        //     return;
+        // }
+        console.log(user.name)
 
         const matchData = {
             team1Name,
@@ -168,18 +200,21 @@ const MatchShadule = () => {
             matchType,
             venue,
             date,
+            matchId,
+            adminID,
+            adminPassword,
         };
 
         console.log("Sending match data:", matchData);
-        dispatch(addMatch(matchData));
         socket.emit("matchData", matchData);
+        handleOpen()
 
     };
 
     return (
         <div>
-            <div className="container">
-                <h2>Create A New Match</h2>
+            {isAuthenticated ? <div className="container">
+                <h1 className='my-4 '>Create A New Match</h1>
                 <div className="playersSection">
                     <div className="teamname">
                         <p>*Enter the Valid Information about the Match</p>
@@ -336,6 +371,37 @@ const MatchShadule = () => {
                                 fullWidth
                                 margin="normal"
                             />
+                            <TextField
+                                type='password'
+                                className='mt-2 subO'
+                                label="Password"
+                                name="Password"
+                                value={adminPassword}
+                                onChange={(e) => { setAdminPassword(e.target.value) }}
+                                fullWidth
+                                margin="normal"
+                            />
+                            <CustomModal
+                                open={open}
+                                handleClose={handleClose}
+                                title="Credentials For The Admin"
+                                footer={
+                                    <>
+                                        <Button onClick={handleClose} color="primary">
+                                            Close
+                                        </Button>
+                                        <Button onClick={handleClose} color="secondary">
+                                            Ok
+                                        </Button>
+                                    </>
+                                }
+                            >
+                                <div>
+                                    <h5>Admin Password : {adminPassword} </h5> <br />
+                                    <h5>Note : </h5>
+                                    <p>Remember Id And PassWord to Start and Handle Match</p>
+                                </div>
+                            </CustomModal>
                         </div>
                     </div>
                     <div className="otherButtonContainer">
@@ -346,9 +412,16 @@ const MatchShadule = () => {
                         >
                             Add Match
                         </Button>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={matchId ? handleMIAlert : generateRandomId}
+                        >
+                            {matchId ? matchId : 'Genrate Match Id'}
+                        </Button>
                     </div>
                 </div>
-            </div>
+            </div> : <LoginButton sign={denger} /> }
         </div>
     );
 };

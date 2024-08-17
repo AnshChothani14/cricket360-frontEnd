@@ -108,3 +108,7 @@
 .otherInput{
     margin-top: 35px;
 }
+.otherButtonContainer{
+    display: flex;
+    justify-content: space-around;
+}

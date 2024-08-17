@@ -1,0 +1,70 @@
+.news {
+    overflow-y: auto;
+    margin-top: 50px;
+}
+
+.news::-webkit-scrollbar {
+    height: 0;
+}
+
+.newsItem {
+    min-width: 340px;
+    height: 100%;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+}
+
+.MuiCard-root {
+    height: 400px;
+}
+
+.MuiTypography-h6 {
+    height: 65px;
+    overflow: hidden;
+}
+
+.MuiTypography-body2 {
+    height: 80px;
+}
+
+.MuiBadge-anchorOriginTopRight {
+    margin: 10px 40px 0px 0px;
+    padding: 2px;
+}
+.news h1{ 
+    padding-left: 20px;
+}
+.newsContainer{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.news  {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background-color: #a9927d; /* Adjust color as needed */
+    transition: width 0.3s ease-in-out;
+}
+
+h1:hover::after {
+    width: 80%; /* Adjust the underline width on hover */
+}

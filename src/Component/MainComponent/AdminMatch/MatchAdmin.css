@@ -1,11 +1,15 @@
 .score,
 .balling,
-.batting{
+.batting,
+.matchInfo{
     background: white ;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5)
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    border: 3px solid #a9927d;
+
 }
+
 .scoreCard{
     width: 100%;
     display: flex;
@@ -39,17 +43,21 @@
     text-align: end;
 }
 .overScore{
-    width: 50%;
+    min-width: 50%;
     display: flex;
     justify-content: space-between;
+    overflow-x: scroll;
     float: right;
     margin-top: 5px;
+}
+.overScore::-webkit-scrollbar{
+    width: 0;
 }
 .O{
     margin-top: 5px;
 }
-
-h5{
+.batsman-1 h5,
+.batsman-2 h5{
     color: #F2F4F3;
 }
 .ball-1,
@@ -57,19 +65,21 @@ h5{
 .ball-3,
 .ball-4,
 .ball-5,
-.ball-6{
+.ball-6,
+.extra-ball{
     background: #F2F4F3;
     border-radius: 50%;
     height: 30px;
     width: 30px;
     text-align: center;
 }
-.ball-1 h5 ,
-.ball-2 h5 ,
-.ball-3 h5 ,
-.ball-4 h5 ,
-.ball-5 h5 ,
-.ball-6 h5 {
+.ball-1 h3 ,
+.ball-2 h3 ,
+.ball-3 h3 ,
+.ball-4 h3 ,
+.ball-5 h3 ,
+.ball-6 h3,
+.extra-ball {
     color: #22333B;
 }
 .updateOptions{
@@ -91,7 +101,6 @@ h5{
     outline: none;
 }
 .updateBatInfo{
-    /* background: #000; */
     display: flex;
     justify-content: space-between;
 }
@@ -99,7 +108,6 @@ h5{
 .sec-for-bat-2{
     display: flex;
     justify-content: space-between;
-    /* background: #22333baf; */
     width: 49%;
     padding: 15px;
     align-items: center;
@@ -116,6 +124,25 @@ h5{
 .batsman-info h5 {
     color: #22333B;
 }
-.balling{
-    
+.TossResult,
+.SelectionResult,
+.OverSelection,
+.Target{
+    width: 450px  ;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 5px  35px  5px 35px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    border: 3px solid #a9927d;
+}
+.Toss_sec{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
 }

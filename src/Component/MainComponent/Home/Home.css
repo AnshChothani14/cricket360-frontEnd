@@ -1,8 +1,7 @@
 .poster {
     width: 100%;
-    /* height: 50vh; */
     margin-top: 50px;
-    margin-bottom: 150px;
+    margin-bottom: 170px;
 }
 
 .typewriter-text {
@@ -29,7 +28,6 @@
     min-width: 340px;
     height: 100%;
     padding: 0px 20px;
-    border: 1px solid #ccc;
     margin-bottom: 20px;
 }
 .MuiCard-root{
@@ -46,4 +44,23 @@
 .MuiBadge-anchorOriginTopRight{
     margin: 10px 40px 0px 0px;
     padding: 2px;
+}
+
+.featureCards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 50px;
+}
+
+.linkFeature{
+    text-decoration: none;
+    color: #000;
+}
+.Home h1 {
+    text-align: center;
+}
+.Home{
+    text-align: center;
 }

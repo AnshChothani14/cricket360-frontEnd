@@ -1,0 +1,17 @@
+.Accordion{
+    display: flex;
+    justify-content: space-around;
+}
+.AccordionMain{
+    width: 100%;
+    background: #f2f4f3;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5)
+}
+h5{
+    display: inline-block;
+}
+.otherInfo{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}

@@ -2,3 +2,24 @@ span{
 font-size: medium;
 font-weight: 800;
 }
+.cardNews{
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        position: relative;
+        background: rgba(255, 255, 255, 0.3); 
+        border-radius: 15px;  
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);  
+        backdrop-filter: blur(10px);  
+        -webkit-backdrop-filter: blur(10px);  
+        border: 1px solid rgba(255, 255, 255, 0.18); 
+        overflow: hidden; 
+    }
+
+.cardNews:hover{
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5)
+}
+.glass-Card{
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
