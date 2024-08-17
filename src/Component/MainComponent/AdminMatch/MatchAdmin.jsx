@@ -592,7 +592,7 @@ const MatchAdmin = ({ Data }) => {
                     : stat
             )
         );
-
+console.log("object")
         const existingBowler = dataSourceForBalling.find(bowler => bowler.name === bowlerName);
 
         if (existingBowler) {
